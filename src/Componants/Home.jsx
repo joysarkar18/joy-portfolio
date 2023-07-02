@@ -23,7 +23,7 @@ const Home = () => {
                   </button>
                 </div>
             </div>
-            <div className='h-180 w-180 z-0'>
+            <div className='h-130 w-180'>
                 <Lottie animationData={homeLogo}/>
             </div>
         </div>
