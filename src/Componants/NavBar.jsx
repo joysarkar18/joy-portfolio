@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-export const NavBar = () => {
-  const [nav, setNav] = useState(false);
+export const NavBar = (props) => {
+  
   const links = [
     { id: 1, link: "Home" },
 
@@ -32,21 +32,21 @@ export const NavBar = () => {
       </ul>
       <div
         onClick={() => {
-          setNav(!nav);
+          props.setNav(!props.nav);
         }}
         className="cursor-pointer text-gray-600 z-10 md:hidden"
       >
-        {nav ? <FaTimes size={30}></FaTimes> : <FaBars size={30}></FaBars>}
+        {props.nav ? <FaTimes size={30}></FaTimes> : <FaBars size={30}></FaBars>}
       </div>
 
-      {nav&& 
-      <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-600">
+      {props.nav && 
+      <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-600 z-9">
       {links.map((link) => {
           return (
             <i
               key={link.id}
               className="px-4 cursor-pointer font-bold
-       text-gray-600 hover:scale-110 duration-200 pt-10"
+       text-gray-600 hover:scale-110 duration-200 pt-10 z-10" 
             >
               {link.link}
             </i>
