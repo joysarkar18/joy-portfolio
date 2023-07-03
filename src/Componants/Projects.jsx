@@ -46,7 +46,7 @@ const Projects = () => {
             
             
 
-              <a href="https://drive.google.com/file/d/1NnZgTGFsWTxGFWyQXqFQo3S9TFw0oul2/view" target="_blank" rel="noreferrer">
+              <a href="https://drive.google.com/file/d/1MBMwo-fpKtOv9rq0G8QSZJL3Uswm2pJ6/view?usp=sharing" target="_blank" rel="noreferrer">
               <div className="flex  w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 hover:text-green-700 cursor-pointer">
                 <div className="pt-1">
                 <FaGoogleDrive></FaGoogleDrive>
