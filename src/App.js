@@ -4,6 +4,7 @@ import { NavBar } from "./Componants/NavBar";
 import About from "./Componants/About";
 import Projects from "./Componants/Projects";
 import Experience from "./Componants/Experience";
+import Contact from "./Componants/Contact";
 
 function App() {
   const [nav, setNav] = useState(false);
@@ -12,8 +13,10 @@ function App() {
     <NavBar nav={nav} setNav= {setNav}></NavBar>
     <Home nav={nav}></Home>
     <About></About>
+    <Experience></Experience>
     <Projects></Projects>
-    {/* <Experience></Experience> */}
+    
+    <Contact></Contact>
    </div>
   );
 }

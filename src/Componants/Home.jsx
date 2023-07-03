@@ -3,9 +3,9 @@ import {AiOutlineArrowRight} from "react-icons/ai"
 import {BsLinkedin , BsGithub , BsFacebook , BsInstagram} from "react-icons/bs"
 import homeLogo from "../Assets/Lottie/97639-coding.json"
 
-const Home = () => {
+const Home = (props) => {
   return (
-    <div name="home" className=' w-full h-screen bg-gradient-to-b from-black via-black to-gray-800'>
+    <div name="home" className=' w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-black via-black to-gray-800 pt-24'>
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
             <div >
                 <h1 className='text-white text-4xl sm:text-7xl font-bold max-w-45'>I'm a Software Developer</h1>
@@ -43,9 +43,9 @@ const Home = () => {
                   </button>
                 </div>
             </div>
-            <div className='h-130 w-180'>
+            {!props.nav && <div >
                 <Lottie animationData={homeLogo}/>
-            </div>
+            </div>}
         </div>
     </div>
   )

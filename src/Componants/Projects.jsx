@@ -3,8 +3,8 @@ import React from "react";
 const Projects = () => {
   return (
     <div
-      name="about"
-      className="w-full min-h-screen bg-gradient-to-b  from-black to-gray-800 py-5  text-white flex flex-col items-center justify-center "
+      name="projects"
+      className="w-full min-h-screen bg-gradient-to-b  from-gray-800 to-black py-5  text-white flex flex-col items-center justify-center "
     >
       <div className="max-w-screen-xl ">
         <div className="">

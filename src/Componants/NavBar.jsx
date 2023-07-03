@@ -1,18 +1,20 @@
 import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 export const NavBar = (props) => {
   
   const links = [
-    { id: 1, link: "Home" },
+    { id: 1, link: "home" },
 
-    { id: 2, link: "About" },
+    { id: 2, link: "about" },
+    { id: 4, link: "experience" },
 
-    { id: 3, link: "Projects" },
+    { id: 3, link: "projects" },
 
-    { id: 4, link: "Experience" },
+ 
 
-    { id: 5, link: "Contact" },
+    { id: 5, link: "contact" },
   ];
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
@@ -22,10 +24,10 @@ export const NavBar = (props) => {
           return (
             <i
               key={link.id}
-              className="px-4 cursor-pointer font-medium
+              className="px-4 cursor-pointer font-medium capitalize
        text-gray-600 hover:scale-110 duration-200"
             >
-              {link.link}
+              <Link to={link.link} smooth duration={500}>{link.link}</Link>
             </i>
           );
         })}
@@ -45,10 +47,12 @@ export const NavBar = (props) => {
           return (
             <i
               key={link.id}
-              className="px-4 cursor-pointer font-bold
+              className="px-4 cursor-pointer font-bold capitalize
        text-gray-600 hover:scale-110 duration-200 pt-10 z-10" 
             >
-              {link.link}
+              <Link onClick={()=>{
+                props.setNav(!props.nav)
+              }} to={link.link} smooth duration={500}>{link.link}</Link>
             </i>
           );
         })}
