@@ -1,6 +1,6 @@
-import React from 'react'
 import Lottie from 'lottie-react'
 import {AiOutlineArrowRight} from "react-icons/ai"
+import {BsLinkedin , BsGithub , BsFacebook , BsInstagram} from "react-icons/bs"
 import homeLogo from "../Assets/Lottie/97639-coding.json"
 
 const Home = () => {
@@ -15,10 +15,30 @@ const Home = () => {
                    technologies like
                    React, Tailwind, Flutter, Firebase and MongoDb.
                 </p>
-                <div className='mb-10'>
+                <div className='mb-10 flex '>
                   <button className='text-white w-fit px-5 py-3 cursor-pointer my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500'> <p className='mr-2'>Projects </p>   
                     <span>
                       <AiOutlineArrowRight></AiOutlineArrowRight>
+                    </span>
+                  </button>
+                  <button className='ml-8'>
+                    <span>
+                      <BsLinkedin color='blue' size={20}/>
+                    </span>
+                  </button>
+                  <button className='ml-8'>
+                    <span >
+                      <BsGithub color='grey' size={20}/>
+                    </span>
+                  </button>
+                  <button className='ml-8'>
+                    <span >
+                      <BsFacebook color='blue' size={23}/>
+                    </span>
+                  </button>
+                  <button className='ml-8'>
+                    <span >
+                      <BsInstagram color='red' size={20}/>
                     </span>
                   </button>
                 </div>
