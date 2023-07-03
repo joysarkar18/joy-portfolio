@@ -5,6 +5,7 @@ import About from "./Componants/About";
 import Projects from "./Componants/Projects";
 import Experience from "./Componants/Experience";
 import Contact from "./Componants/Contact";
+import Copy from "./Componants/Copy";
 
 function App() {
   const [nav, setNav] = useState(false);
@@ -17,6 +18,7 @@ function App() {
     <Projects></Projects>
     
     <Contact></Contact>
+    <Copy></Copy>
    </div>
   );
 }

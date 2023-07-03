@@ -18,14 +18,18 @@ export const NavBar = (props) => {
   ];
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
-      <h1 className="text-3xl mx-3">Joy</h1>
+      <div className="flex text-xs">
+      <h1 className="text-3xl mx-3 font-mark">Joy Sarkar</h1>
+      
+      </div>
+     
       <ul className="hidden md:flex">
         {links.map((link) => {
           return (
             <i
               key={link.id}
               className="px-4 cursor-pointer font-medium capitalize
-       text-gray-600 hover:scale-110 duration-200"
+       text-gray-400 hover:scale-110 duration-200"
             >
               <Link to={link.link} smooth duration={500}>{link.link}</Link>
             </i>
