@@ -1,7 +1,12 @@
-import React , {useRef} from 'react'
+import React , {useRef , useState} from 'react'
 import emailjs from '@emailjs/browser';
+import Lottie from 'lottie-react'
+import thankyou from "../Assets/Lottie/43018-thank-you-lottiefiles.json"
 
 const Contact = () => {
+     
+    const [thank , setThank] = useState(false);
+
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -9,6 +14,7 @@ const Contact = () => {
   
       emailjs.sendForm('service_o4fykbp', 'template_m0cxxux', form.current, 'V2Hg3zbD-zPyJKbX-')
         .then((result) => {
+           setThank(!thank);
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
@@ -34,10 +40,11 @@ const Contact = () => {
      
 
       <div className=" flex justify-center items-center">
-          <form
+          {!thank && <form
           ref={form}
             className=" flex flex-col w-full md:w-1/2"
           >
+            
             <input
             type="text" name="user_name"
               placeholder="Enter your name"
@@ -55,11 +62,18 @@ const Contact = () => {
               rows="10"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             ></textarea>
+            
+
+
 
             <button onClick={sendEmail} className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
               Let's talk
             </button>
-          </form>
+          </form>}
+
+          {thank && <div className='h-full pt-16 px-5 flex justify-center items-center'>
+          <Lottie animationData={thankyou}></Lottie>
+          </div>}
         </div>
 
 
