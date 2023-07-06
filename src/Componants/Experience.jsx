@@ -91,7 +91,7 @@ const Experience = () => {
             <p className='mt-4'>C++</p>
           </div>
 
-          <div className='shadow-md shadow-yellow-500 hover:scale-105 duration-500 py-2 rounded-lg'>
+          <div className='shadow-md shadow-yellow-400 hover:scale-105 duration-500 py-2 rounded-lg'>
             <img src={python} alt='html' className='w-20 mx-auto'></img>
             <p className='mt-4'>PYTHON</p>
           </div>
