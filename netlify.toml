@@ -3,8 +3,11 @@
   publish = "dist"
 
 # Tailwind v4's native engine (@tailwindcss/oxide) needs Node 20+.
+# NETLIFY_NEXT_PLUGIN_SKIP: the site was previously Next.js and still has
+# @netlify/plugin-nextjs enabled in the Netlify UI; this makes it a no-op.
 [build.environment]
   NODE_VERSION = "20"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[headers]]
   for = "/*"
