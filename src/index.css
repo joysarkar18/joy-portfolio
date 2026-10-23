@@ -1,11 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
 
-@layer base{
-    html{
-        font-family: 'Raleway', sans-serif;
-    }
+@theme {
+  --color-base: #07090f;
+  --color-surface: #0d1119;
+  --color-surface-2: #121826;
+  --color-line: #1c2434;
+  --color-fg: #e8ecf4;
+  --color-muted: #8b95a8;
+  --color-sky: #4cc9ff;
+  --color-lime: #3ddc84;
+  --color-violet: #b388ff;
+  --color-amber: #ffb547;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-blink: blink 1s steps(2, start) infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    to { visibility: hidden; }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.6); opacity: 0.8; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-sky) 35%, transparent);
+}
+
+/* Soft dotted grid used behind the hero and section headers. */
+.grid-bg {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--color-fg) 9%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.glass {
+  background: color-mix(in oklab, var(--color-surface) 70%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-line);
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-surface-2) 90%, transparent),
+    var(--color-surface)
+  );
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  border-color: color-mix(in oklab, var(--color-sky) 45%, var(--color-line));
+  box-shadow: 0 20px 60px -30px color-mix(in oklab, var(--color-sky) 50%, transparent);
+}
+
+.text-gradient {
+  background: linear-gradient(92deg, var(--color-sky), var(--color-violet) 60%, var(--color-lime));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  font-size: 0.85rem;
+  color: var(--color-fg);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.chip:hover {
+  border-color: var(--color-sky);
+  transform: translateY(-1px);
+}
+
+/* Thin, dark scrollbar so the page edge stays quiet. */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-base); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+  border: 2px solid var(--color-base);
 }
