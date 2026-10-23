@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Tailwind v4's native engine (@tailwindcss/oxide) needs Node 20+.
+[build.environment]
+  NODE_VERSION = "20"
+
 [[headers]]
   for = "/*"
   [headers.values]
